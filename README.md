@@ -101,10 +101,10 @@ cd frontend
 npm run build -- --mode production
 
 # Step 2: Strictly synchronize payload with S3, deleting stale artifacts
-aws s3 sync dist s3://productify-frontend-858977493574 --delete
+aws s3 sync dist s3://productify-frontend-XXXXXXXXXXXXXXX --delete
 
 # Step 3: Trigger a CloudFront Edge Cache Invalidation for immediate global delivery
-aws cloudfront create-invalidation --distribution-id EG6ED9MDZZMGV --paths "/*" "/api/*"
+aws cloudfront create-invalidation --distribution-id {distribution-id} --paths "/*" "/api/*"
 ```
 
 ---
